@@ -19,7 +19,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    fetch('http://localhost:5000/login', {
+    fetch('http://127.0.0.1:5000/login', {
       method: 'post',
       headers: new Headers({
         'Accept': 'application/json',

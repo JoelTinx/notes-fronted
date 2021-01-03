@@ -17,7 +17,7 @@ const Dashboard = () => {
     fetch('http://localhost:5000/api/notes', {
       method: 'get',
       headers: new Headers({
-        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjA5NDE1MjEwLCJleHAiOjE2MDk0NzI4MTB9.LVpcS7Ht9TBkJx3VjbnkGW0D_M3XX2_bsnG4IjTXttw'
+        'Authorization': localStorage.getItem('token')
       })
     })
     .then(res => res.json())
@@ -41,10 +41,10 @@ const Dashboard = () => {
 
   const reloadData = () => {
     handleIsLoading(true)
-    fetch('http://localhost:5000/api/notes', {
+    fetch('http://127.0.0.1:5000/api/notes', {
       method: 'get',
       headers: new Headers({
-        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjA5NDE1MjEwLCJleHAiOjE2MDk0NzI4MTB9.LVpcS7Ht9TBkJx3VjbnkGW0D_M3XX2_bsnG4IjTXttw'
+        'Authorization': localStorage.getItem('token')
       })
     })
     .then(res => res.json())
